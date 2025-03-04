@@ -1,232 +1,96 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沖繩迷你團</title>
+    <style>
+        .product-card-container {
+            display: flex;
+            background: #f4f6f7;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 95%;
+        }
+        .product-card-image {
+            flex: 1;
+            position: relative;
+        }
+        .product-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-card-info {
+            flex: 2;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .product-card-title {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 0;
+            font-weight: 600;
+        }
+        .pdcard-price {
+            color: #ff5722;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .people-buttons button {
+            padding: 8px 40px;
+            border: 2px solid #3498db;
+            background: transparent;
+            color: #3498db;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .people-buttons button.active {
+            background: #3498db;
+            color: white;
+        }
+        .pdcard-cta-button {
+            background: #26bec9;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="zh-TW"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;沖繩迷你團&lt;/title&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1">.product-card-container {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: #f4f6f7;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>max-width: 95%;</p>
-<p class="p1">}</p>
-<p class="p1">.product-card-image {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>flex: 1;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position: relative;</p>
-<p class="p1">}</p>
-<p class="p1">.product-card-image img {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition: transform 0.3s ease;</p>
-<p class="p1">}</p>
-<p class="p1">.prd-img {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition: transform 0.3s ease;</p>
-<p class="p1">}</p>
-<p class="p1">.product-card-image:hover .prd-img {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transform: scale(1.05);</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">.product-card-info {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>flex: 2;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap: 20px;</p>
-<p class="p1">}</p>
-<p class="p1">.product-card-title {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #2c3e50;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 600;</p>
-<p class="p1">}</p>
-<p class="p1">.itinerary {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin: 10px 0;</p>
-<p class="p1">}</p>
-<p class="p1">.itinerary ul {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>list-style: none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap: 12px;</p>
-<p class="p1">}</p>
-<p class="p1">.itinerary li {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>list-style: none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding-left: 25px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin: 5px 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #7f8c8d;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition: transform 0.2s;</p>
-<p class="p1">}</p>
-<p class="p1">.itinerary li:hover {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transform: translateX(5px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #3498db;</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">.itinerary li::before {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>content: "\2714"; /* 勾選圖標 */</p>
-<p class="p1"><span class="Apple-converted-space">  </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #2ecc71;</p>
-<p class="p1">}</p>
-<p class="p1">.pdcard-price-container {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-top: auto;</p>
-<p class="p1">}</p>
-<p class="p1">.pdcard-price-section {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>align-items: baseline;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap: 8px;</p>
-<p class="p1">}</p>
-<p class="p1">.pdcard-price {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #ff5722;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-right: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-left: 50px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>align-items: baseline;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-weight: bold;</p>
-<p class="p1">}</p>
-<p class="p1">.per-person {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #7f8c8d;</p>
-<p class="p1">}</p>
-<p class="p1">.people-buttons {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 15px;</p>
-<p class="p1">}</p>
-<p class="p1">.people-buttons button {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 8px 40px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid #3498db;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #3498db;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition: all 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size: 1.1em;</p>
-<p class="p1">}</p>
-<p class="p1">.people-buttons button.active {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: #3498db;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
-<p class="p1">}</p>
-<p class="p1">.pdcard-cta-button {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: #26bec9;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transition: all 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>box-shadow: 0 2px 8px RGBA(0, 0, 0, 0.3);</p>
-<p class="p1">}</p>
-<p class="p1">.pdcard-cta-button:hover {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: #22A5AE;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>transform: translateY(-2px);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>box-shadow: 0 4px 12px RGBA(0, 0, 0, 0.4);</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">@media (max-width: 768px) {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>.product-card-container {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><span class="Apple-converted-space">  </span></p>
-<p class="p1"><span class="Apple-converted-space">  </span>.product-card-image {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>aspect-ratio: 16/9;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><span class="Apple-converted-space">  </span></p>
-<p class="p1"><span class="Apple-converted-space">  </span>.product-card-info {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><span class="Apple-converted-space">  </span></p>
-<p class="p1"><span class="Apple-converted-space">  </span>.product-card-title {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>font-size: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><span class="Apple-converted-space">  </span></p>
-<p class="p1"><span class="Apple-converted-space">  </span>.people-buttons {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><span class="Apple-converted-space">  </span></p>
-<p class="p1"><span class="Apple-converted-space">  </span>.people-buttons button {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>flex: 1;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>min-width: 80px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="product-card-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="product-card-image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://image.kkday.com/v2/image/get/h_600%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_163506/20250225091541_K1lX5/jpg" alt="沖繩迷你團" class="prd-img"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="product-card-info"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="product-card-title"&gt;超值沖繩迷你團 5 日・2～8 人成行｜專車不併團・含沖繩機場接送＋熱門行程自由配｜樂桃航空・桃園出發&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="itinerary"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>行程選配：任選2種</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;【經典遊】古宇利島＋海洋塔、美麗海水族館、美國村&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;【文化遊】波上宮、糸滿魚市場、玉泉洞、齋場御嶽、瀨長島&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;【購物遊】iias沖繩豐崎(含 DMM水族館)、貓咪之島(奧武島) 、瀨長島&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;【森海遊】部瀨名海中公園(含展望塔門票)、Bios之丘(含遊船體驗) 、美國村&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;【親子遊Ａ】沖繩DINO恐龍公園、美麗海水族館、川外人住宅&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;【親子遊Ｂ】名護自然動植物公園(Neo Park)、部瀨名海中公園(含展望塔+玻璃底船)、殘波岬公園&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="pdcard-price-container"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="people-buttons"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="active" onclick="updatePrice(2, 33500)"&gt;2人&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button onclick="updatePrice(4, 25500)"&gt;4人&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button onclick="updatePrice(6, 23500)"&gt;6人&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;button onclick="updatePrice(8, 22500)"&gt;8人&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">       </span>&lt;div class="pdcard-price-section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="pdcard-price" id="price"&gt;33,500起&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="per-person"&gt;每人&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="pdcard-cta-button"&gt;立即訂購&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>function updatePrice(people, price) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('price').textContent = price.toLocaleString() + '起';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.querySelectorAll('.people-buttons button').forEach(btn =&gt; btn.classList.remove('active'));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>event.target.classList.add('active');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/html&gt;</p>
+    <div class="product-card-container">
+        <div class="product-card-image">
+            <img src="https://image.kkday.com/v2/image/get/h_600%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_163506/20250225091541_K1lX5/jpg" alt="沖繩迷你團">
+        </div>
+        <div class="product-card-info">
+            <div class="product-card-title">超值沖繩迷你團 5 日・2～8 人成行</div>
+            <div class="pdcard-price-container">
+                <div class="people-buttons">
+                    <button onclick="updatePrice(2, 33500, event)" class="active">2人</button>
+                    <button onclick="updatePrice(4, 25500, event)">4人</button>
+                    <button onclick="updatePrice(6, 23500, event)">6人</button>
+                    <button onclick="updatePrice(8, 22500, event)">8人</button>
+                </div>
+                <div class="pdcard-price" id="price">33,500起</div>
+            </div>
+            <button class="pdcard-cta-button">立即訂購</button>
+        </div>
+    </div>
+
+    <script>
+        function updatePrice(people, price, event) {
+            document.getElementById('price').textContent = price.toLocaleString() + '起';
+            document.querySelectorAll('.people-buttons button').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
