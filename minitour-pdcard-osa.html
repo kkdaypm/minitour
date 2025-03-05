@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大阪迷你團</title>
+  <style>
+    .product-card-container {
+      display: flex;
+      background: #f4f6f7;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      max-width: 95%;
+    }
+
+    .product-card-image {
+      flex: 1;
+      position: relative;
+    }
+
+    .product-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .prd-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card-image:hover .prd-img {
+      transform: scale(1.05);
+    }
+
+    .product-card-info {
+      flex: 2;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .product-card-title {
+      font-size: 24px;
+      color: #2c3e50;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .itinerary {
+      margin: 10px 0;
+    }
+
+    .itinerary-pick {
+      margin: 10px 0;
+      font-size: 1.15em;
+      color: #22a5ae;
+    }
+
+    .itinerary ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 12px;
+    }
+
+    .itinerary li {
+      list-style: none;
+      position: relative;
+      padding-left: 25px;
+      margin: 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #7f8c8d;
+      transition: transform 0.2s;
+    }
+
+    .itinerary li:hover {
+      transform: translateX(5px);
+      color: #3498db;
+    }
+
+    .itinerary li::before {
+      content: "\2714";
+      /* 勾選圖標 */
+      position: absolute;
+      left: 0;
+      color: #2ecc71;
+    }
+
+    .pdcard-price-container {
+      margin-top: auto;
+    }
+
+    .pdcard-price-section {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .pdcard-price {
+      color: #ff5722;
+      font-weight: bold;
+      margin-right: 10px;
+      margin-left: 50px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .per-person {
+      color: #7f8c8d;
+    }
+
+    .people-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .people-buttons button {
+      padding: 8px 16px;
+      border: 2px solid #3498db;
+      background: transparent;
+      color: #3498db;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .people-buttons button.active {
+      background: #3498db;
+      color: white;
+    }
+
+    .people-buttons2 {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .people-buttons2 button {
+      padding: 8px 16px;
+      border: 2px solid #3498db;
+      background: transparent;
+      color: #3498db;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .people-buttons2 button.active {
+      background: #3498db;
+      color: white;
+    }
+
+    .people-buttons3 {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .people-buttons3 button {
+      padding: 8px 16px;
+      border: 2px solid #3498db;
+      background: transparent;
+      color: #3498db;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .people-buttons3 button.active {
+      background: #3498db;
+      color: white;
+    }
+
+    .pdcard-cta-button {
+      background: #26bec9;
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px RGBA(0, 0, 0, 0.3);
+    }
+
+    .pdcard-cta-button:hover {
+      background: #22a5ae;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px RGBA(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .product-card-container {
+        flex-direction: column;
+      }
+
+      .product-card-image {
+        aspect-ratio: 16/9;
+      }
+
+      .product-card-info {
+        padding: 20px;
+      }
+
+      .product-card-title {
+        font-size: 20px;
+      }
+
+      .people-buttons {
+        flex-wrap: wrap;
+      }
+
+      .people-buttons button {
+        flex: 1;
+        min-width: 80px;
+      }
+
+      .people-buttons2 {
+        flex-wrap: wrap;
+      }
+
+      .people-buttons2 button {
+        flex: 1;
+        min-width: 80px;
+      }
+
+      .people-buttons3 {
+        flex-wrap: wrap;
+      }
+
+      .people-buttons3 button {
+        flex: 1;
+        min-width: 80px;
+      }
+    }
+
+    /*調整iframe高度*/
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      height: 300vh;
+      padding-bottom: 56.25%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="product-card-container">
+    <div class="product-card-image">
+      <img src="https://image.kkday.com/v2/image/get/h_300%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_159644/20250217091750_sL3kh/jpg" alt="沖繩迷你團" class="prd-img">
+    </div>
+    <div class="product-card-info">
+      <div class="product-card-title">樂遊關西迷你團 5 日・2～10 人成行｜專車不併團・熱門路線自由配含大阪接送機・自選加購環球影城門票｜全程無購物</div>
+      <div class="itinerary">
+        <div class="itinerary-pick">行程選配：任選2種，可再加購大阪環球影城一日券</div>
+        <ul>
+          <li>【 路線 A 】海之京都伊根天橋立行程</li>
+          <li>【 路線 B 】大阪最新網紅聖地勝尾寺行程</li>
+          <li>【 路線 C 】奈良・四季琵琶湖行程：琵琶湖（停留時間約60-80分鐘）</li>
+          <li>【 路線 D 】和歌山白濱行程</li>
+        </ul>
+      </div>
+      <div class="pdcard-price-container">
+
+        <div class="people-buttons">
+          <button onclick="updatePriceA(2, 45500)">2人</button>
+          <button class="active" onclick="updatePriceA(4, 35500)">4人</button>
+          <button onclick="updatePriceA(6, 32000)">6人</button>
+          <button onclick="updatePriceA(8, 30500)">8人</button>
+          <button onclick="updatePriceA(10, 29900)">10人</button>
+        </div>
+        <div class="pdcard-price-section">
+          <div class="pdcard-price" id="price">35,500起</div>
+          <span class="per-person">每人</span>
+        </div>
+      </div>
+
+      <button onclick="window.open('https://www.kkday.com/zh-tw/product/159644', '_blank');" class="pdcard-cta-button">立即訂購</button>
+    </div>
+  </div>
+  <script>
+    function updatePriceA(people, price) {
+      document.getElementById('price').textContent = price.toLocaleString() + '起';
+      document.querySelectorAll('.people-buttons button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+
+</html>
