@@ -51,6 +51,11 @@
 .itinerary {
   margin: 10px 0;
 }
+.itinerary-pick {
+  margin: 10px 0;
+  font-size:1.15em;
+  color:#22a5ae;
+}
 .itinerary ul {
   list-style: none;
   padding: 0;
@@ -103,22 +108,59 @@
 .per-person {
   color: #7f8c8d;
 }
-.people-buttons {
+.people-buttons{
   display: flex;
   gap: 10px;
   margin-bottom: 15px;
 }
 .people-buttons button {
-  padding: 8px 40px;
+  padding: 8px 16px;
   border: 2px solid #3498db;
   background: transparent;
   color: #3498db;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s;
-  font-size: 1.1em;
 }
 .people-buttons button.active {
+  background: #3498db;
+  color: white;
+}
+
+.people-buttons2{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.people-buttons2 button {
+  padding: 8px 16px;
+  border: 2px solid #3498db;
+  background: transparent;
+  color: #3498db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.people-buttons2 button.active {
+  background: #3498db;
+  color: white;
+}
+
+.people-buttons3{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.people-buttons3 button {
+  padding: 8px 16px;
+  border: 2px solid #3498db;
+  background: transparent;
+  color: #3498db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.people-buttons3 button.active {
   background: #3498db;
   color: white;
 }
@@ -134,7 +176,7 @@
   box-shadow: 0 2px 8px RGBA(0, 0, 0, 0.3);
 }
 .pdcard-cta-button:hover {
-  background: #22A5AE;
+  background: #22a5ae;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px RGBA(0, 0, 0, 0.4);
 }
@@ -143,27 +185,33 @@
   .product-card-container {
     flex-direction: column;
   }
-  
+
   .product-card-image {
     aspect-ratio: 16/9;
   }
-  
+
   .product-card-info {
     padding: 20px;
   }
-  
+
   .product-card-title {
     font-size: 20px;
   }
-  
+
   .people-buttons {
     flex-wrap: wrap;
   }
-  
+
   .people-buttons button {
     flex: 1;
     min-width: 80px;
   }
+}
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
 }
 </style>
 </head>
@@ -174,9 +222,9 @@
       <img src="https://image.kkday.com/v2/image/get/h_600%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_163506/20250225091541_K1lX5/jpg" alt="沖繩迷你團" class="prd-img">
     </div>
     <div class="product-card-info">
-      <div class="product-card-title">超值沖繩迷你團 5 日・2～8 人成行｜專車不併團・含沖繩機場接送＋熱門行程自由配｜樂桃航空・桃園出發</div>
+      <div class="product-card-title">樂活沖繩迷你團 4 日・2～8 人成行｜專車不併團・含沖繩機場接送＋熱門行程自由配｜泰越捷航空・桃園出發</div>
       <div class="itinerary">
-        行程選配：任選2種
+        <div class="itinerary-pick">行程選配：任選1種，可再加購1種</div>
         <ul>
           <li>【經典遊】古宇利島＋海洋塔、美麗海水族館、美國村</li>
           <li>【文化遊】波上宮、糸滿魚市場、玉泉洞、齋場御嶽、瀨長島</li>
@@ -189,28 +237,120 @@
       <div class="pdcard-price-container">
 
         <div class="people-buttons">
-          <button class="active" onclick="updatePrice(2, 33500)">2人</button>
-          <button onclick="updatePrice(4, 25500)">4人</button>
-          <button onclick="updatePrice(6, 23500)">6人</button>
-          <button onclick="updatePrice(8, 22500)">8人</button>
+          <button onclick="updatePriceA(2, 23900)">2人</button>
+          <button onclick="updatePriceA(3, 19900)">3人</button>
+          <button class="active" onclick="updatePriceA(4, 18900)">4人</button>
+          <button onclick="updatePriceA(5, 17900)">5人</button>
+          <button onclick="updatePriceA(6, 17500)">6人</button>
+          <button onclick="updatePriceA(7, 16900)">7人</button>
+          <button onclick="updatePriceA(8, 16500)">8人</button>
         </div>
-       <div class="pdcard-price-section">
-        <div class="pdcard-price" id="price">33,500起</div>
-        <span class="per-person">每人</span>
+        <div class="pdcard-price-section">
+          <div class="pdcard-price" id="price">18,900起</div>
+          <span class="per-person">每人</span>
         </div>
       </div>
 
-      <button class="pdcard-cta-button">立即訂購</button>
+      <button onclick="window.location.href='https://www.kkday.com/zh-tw/product/161168';"  class="pdcard-cta-button">立即訂購</button>
     </div>
   </div>
   <script>
-    function updatePrice(people, price) {
+    function updatePriceA(people, price) {
       document.getElementById('price').textContent = price.toLocaleString() + '起';
       document.querySelectorAll('.people-buttons button').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
     }
   </script>
 
+  <div class="product-card-container">
+    <div class="product-card-image">
+      <img src="https://image.kkday.com/v2/image/get/h_600%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_163506/20250225091541_K1lX5/jpg" alt="沖繩迷你團" class="prd-img">
+    </div>
+    <div class="product-card-info">
+      <div class="product-card-title">蔚藍沖繩迷你團 4 日・2～8 人成行｜專車不併團・含沖繩機場接送＋熱門行程自由配＋贈單軌電車票｜樂桃航空・桃園出發</div>
+      <div class="itinerary">
+        <div class="itinerary-pick">行程選配：任選1種</div>
+        <ul>
+          <li>【經典遊】古宇利島＋海洋塔、美麗海水族館、美國村</li>
+          <li>【文化遊】波上宮、糸滿魚市場、玉泉洞、齋場御嶽、瀨長島</li>
+          <li>【購物遊】iias沖繩豐崎(含 DMM水族館)、貓咪之島(奧武島) 、瀨長島</li>
+          <li>【森海遊】部瀨名海中公園(含展望塔門票)、Bios之丘(含遊船體驗) 、美國村</li>
+          <li>【親子遊Ａ】沖繩DINO恐龍公園、美麗海水族館、川外人住宅</li>
+          <li>【親子遊Ｂ】名護自然動植物公園(Neo Park)、部瀨名海中公園(含展望塔+玻璃底船)、殘波岬公園</li>
+        </ul>
+      </div>
+      <div class="pdcard-price-container">
+
+        <div class="people-buttons2">
+          <button onclick="updatePriceB(2, 26900)">2人</button>
+          <button onclick="updatePriceB(3, 23900)">3人</button>
+          <button class="active" onclick="updatePriceB(4, 22900)">4人</button>
+          <button onclick="updatePriceB(5, 21900)">5人</button>
+          <button onclick="updatePriceB(6, 20900)">6人</button>
+          <button onclick="updatePriceB(7, 20500)">7人</button>
+          <button onclick="updatePriceB(8, 19900)">8人</button>
+        </div>
+        <div class="pdcard-price-section">
+          <div class="pdcard-price" id="price2">22,900起</div>
+          <span class="per-person">每人</span>
+        </div>
+      </div>
+
+      <button onclick="window.location.href='https://www.kkday.com/zh-tw/product/161983';" class="pdcard-cta-button">立即訂購</button>
+    </div>
+  </div>
+  <script>
+    function updatePriceB(people, price) {
+      document.getElementById('price2').textContent = price.toLocaleString() + '起';
+      document.querySelectorAll('.people-buttons2 button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+
+  <div class="product-card-container">
+    <div class="product-card-image">
+      <img src="https://image.kkday.com/v2/image/get/h_600%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/product_163506/20250225091541_K1lX5/jpg" alt="沖繩迷你團" class="prd-img">
+    </div>
+    <div class="product-card-info">
+      <div class="product-card-title">超值沖繩迷你團 5 日・2～8 人成行｜專車不併團・含沖繩機場接送＋熱門行程自由配｜樂桃航空・桃園出發</div>
+      <div class="itinerary">
+        <div class="itinerary-pick">行程選配：任選2種</div>
+        <ul>
+          <li>【經典遊】古宇利島＋海洋塔、美麗海水族館、美國村</li>
+          <li>【文化遊】波上宮、糸滿魚市場、玉泉洞、齋場御嶽、瀨長島</li>
+          <li>【購物遊】iias沖繩豐崎(含 DMM水族館)、貓咪之島(奧武島) 、瀨長島</li>
+          <li>【森海遊】部瀨名海中公園(含展望塔門票)、Bios之丘(含遊船體驗) 、美國村</li>
+          <li>【親子遊Ａ】沖繩DINO恐龍公園、美麗海水族館、川外人住宅</li>
+          <li>【親子遊Ｂ】名護自然動植物公園(Neo Park)、部瀨名海中公園(含展望塔+玻璃底船)、殘波岬公園</li>
+        </ul>
+      </div>
+      <div class="pdcard-price-container">
+
+        <div class="people-buttons3">
+          <button onclick="updatePriceC(2, 33500)">2人</button>
+          <button onclick="updatePriceC(3, 28900)">3人</button>
+          <button class="active" onclick="updatePriceC(4, 25500)">4人</button>
+          <button onclick="updatePriceC(5, 24900)">2人</button>
+          <button onclick="updatePriceC(6, 23500)">6人</button>
+          <button onclick="updatePriceC(7, 22900)">2人</button>
+          <button onclick="updatePriceC(8, 22500)">8人</button>
+        </div>
+        <div class="pdcard-price-section">
+          <div class="pdcard-price" id="price3">25,500起</div>
+          <span class="per-person">每人</span>
+        </div>
+      </div>
+
+      <button onclick="window.location.href='https://www.kkday.com/zh-tw/product/163506';" class="pdcard-cta-button">立即訂購</button>
+    </div>
+  </div>
+  <script>
+    function updatePriceC(people, price) {
+      document.getElementById('price3').textContent = price.toLocaleString() + '起';
+      document.querySelectorAll('.people-buttons3 button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
 
 </html>
